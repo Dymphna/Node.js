@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" 
+            content="width=device-width, userscaleability=no, initial-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!--<link rel="stylesheet" href="/assets/css/custom.css">-->
+        <title><%= title %></title>
+    </head>
+
+<body>
+    <% include partials/header.ejs %>
+        <div class="container">
+            <% if (message != ''){ %>
+                <p class="text-center text-center"><%= message %></p>
+            <% } %>
+            <form class="add-user-form" action="" method="post" enctype="multipart/form-data">
+              <div class="form-row">
+                  <div class="form-group col-md-4">
+                      <input type="text" class="form-control" name="first_name" id="first-name" placeholder="First Name" required>
+                  </div>
+                  <div class="form-group col-md-4">
+                      <input type="text" class="form-control" name="last_name" id="last-name" placeholder="Last Name" required>
+                  </div>
+                  <div class="form-group col-md-4">
+                      <input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
+                  </div>
+              </div>
+              <div class="form-row">
+                  <div class="col-md-12">
+                      <label for="vendor-img"><b>Vendor Image</b></label><br>
+                      <input type="file" name="image" id="vendor-img" class="" required>
+                  </div>
+              </div>
+              <button type="submit" class="btn btn-primary float-right">Add Vendor</button>
+            </form>
+        </div>
+</body>
+</html>  
